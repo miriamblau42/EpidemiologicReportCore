@@ -26,3 +26,4 @@ C:\Users\1\Documents\core\Report\EpidemilogicReport\EpidemilogicReport\obj\Debug
 C:\Users\1\Documents\core\Report\EpidemilogicReport\EpidemilogicReport\obj\Debug\net5.0\ref\EpidemilogicReport.dll
 C:\Users\1\Documents\core\Report\EpidemilogicReport\EpidemilogicReport\obj\Debug\net5.0\EpidemilogicReport.pdb
 C:\Users\1\Documents\core\Report\EpidemilogicReport\EpidemilogicReport\obj\Debug\net5.0\EpidemilogicReport.genruntimeconfig.cache
+C:\Users\1\Documents\core\Report\EpidemilogicReport\EpidemilogicReport\obj\Debug\net5.0\EpidemilogicReport.csprojAssemblyReference.cache

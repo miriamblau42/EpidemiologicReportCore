@@ -39,25 +39,31 @@ namespace EpidemilogicReport.Controllers
             }
             return NotFound();
         }
+        [HttpGet]
+        [Route("GetLocations/{patientId}")]
+        public ActionResult<List<Location>> GetLocationById(string patientId)
+        {
+            List<Location> locations = _locationService.GetLocationbByPatientId(patientId);
+            if (locations != null)
+            {
+                return Ok(locations);
+            }
+            return NotFound();
+        }
 
         // POST api/<LocationController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(string patientId,[FromBody] Location location )
         {
-
+            _locationService.AddLocation(patientId, location);
         }
 
-        // PUT api/<LocationController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
 
-        }
+        //// DELETE api/<LocationController>/15
+        //[HttpDelete("{LocationId}")]
+        //public void Delete(string Locationid)
+        //{
 
-        // DELETE api/<LocationController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //}
     }
 }

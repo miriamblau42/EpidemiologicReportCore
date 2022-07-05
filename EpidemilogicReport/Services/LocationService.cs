@@ -12,6 +12,7 @@ namespace EpidemilogicReport.Services
     {
         List<Patient> patients;
         List<Location> AllLocations;
+        Patient currentPatient;
         public LocationService()
         {
             Init();
@@ -48,7 +49,26 @@ namespace EpidemilogicReport.Services
         {
             return AllLocations.Where(location => location.City.Contains(city)).ToList();
         }
-
+        public Patient GetPatient(string patientId)
+        {
+            currentPatient =  patients.FirstOrDefault(p => p.Id.Equals(patientId));
+            if(currentPatient==null)
+            {
+                currentPatient = new Patient(patientId);
+                patients.Add(currentPatient);
+            }
+            return currentPatient;
+        }
+        public List<Location> GetLocationbByPatientId(string patientId)
+        {
+            currentPatient = GetPatient(patientId);
+            return currentPatient.LocationArr;
+        }
+        public void AddLocation(string patientId, Location location)
+        {
+            currentPatient = GetPatient(patientId);
+            currentPatient.LocationArr.Add(location);
+        }
 
     }
 }
