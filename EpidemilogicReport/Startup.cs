@@ -30,6 +30,9 @@ namespace EpidemilogicReport
         {
 
             services.AddControllers();
+            services.AddCors(option => option.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EpidemilogicReport", Version = "v1" });
@@ -48,6 +51,8 @@ namespace EpidemilogicReport
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("AllowAll");
 
             app.UseRouting();
 

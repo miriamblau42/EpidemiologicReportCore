@@ -50,6 +50,14 @@ namespace EpidemilogicReport.Controllers
             }
             return NotFound();
         }
+        [HttpGet]
+        [Route("GetPatient/{patientId}")]
+        public ActionResult<Patient> GetPatient(string patientId)
+        {
+            Patient p = _locationService.GetPatient(patientId);
+            
+            return Ok(p);
+        }
 
         // POST api/<LocationController>
         [HttpPost]

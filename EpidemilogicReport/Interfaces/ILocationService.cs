@@ -12,6 +12,7 @@ namespace EpidemilogicReport.Interfaces
         public List<Location> GetLocationsByCity(string city);
         public void AddLocation(string patientId, Location location);
         public List<Location> GetLocationbByPatientId(string patientId);
+        public Patient GetPatient(string patientId);
 
     }
 }
